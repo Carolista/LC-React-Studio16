@@ -1,0 +1,138 @@
+/* Custom classes, etc */
+.primary-lighter {
+    background-color: #c36d4b;
+} 
+
+.text-primary-lighter {
+    color: #c36d4b;
+}
+
+.App {
+    height: 100vh;
+}
+
+.home-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: space-between;
+}
+
+/* MASTHEAD SKINNY */
+.masthead {
+    position: relative;
+    overflow: hidden;
+    padding: 2rem;
+    z-index: 2;
+    margin-bottom: 2rem;
+}
+.masthead:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+.masthead .masthead-content {
+    position: relative;
+    max-width: 24rem;
+    margin: 0 auto;
+}
+.masthead-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* .masthead .masthead-content h1, .masthead .masthead-content .h1 {
+  font-size: 2.5rem;
+}
+.masthead .masthead-content p {
+  font-size: 1.2rem;
+}
+.masthead .masthead-content p strong {
+  font-weight: 700;
+}
+.masthead .masthead-content .input-group-newsletter input {
+  height: auto;
+  width: 100%;
+  font-size: 1rem;
+  padding: 1rem;
+}
+.masthead .masthead-content .input-group-newsletter button {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: calc(1rem + 2px);
+} */
+
+/* MASTHEAD WIDE */
+@media (min-width: 992px) {
+    .masthead {
+        height: auto;
+        width: 30vw;
+        /* min-height: 0; */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 1rem 1.5rem;
+        margin: 0 0 2rem;
+    }
+    .masthead:before {
+        transform: skewX(-9deg);
+        transform-origin: top right;
+    }
+    .masthead-content {
+        /* height: auto; */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 0;
+        margin: 0;
+    }
+  /* .masthead .masthead-content h1, .masthead .masthead-content .h1 {
+    font-size: 3.5rem;
+  }
+  .masthead .masthead-content p {
+    font-size: 1.3rem;
+  } */
+}
+
+.logo-home {
+    width: auto;
+    height: 15vh;
+    margin-bottom: 1rem;    
+}
+
+.nav-content {
+    position: relative;
+    width: 27.5vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-choice {
+    color: white;
+    background-color: #a7451f;
+    width: 100%;
+    height: 1.5rem;
+    padding: 0.3rem;
+    margin: 0 0 0.7rem
+}
+
+@media (min-width: 992px) {
+    .logo-home {
+        width: 90%;
+        height: auto;
+        margin-bottom: 2rem;
+    }
+}

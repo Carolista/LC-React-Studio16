@@ -1,11 +1,13 @@
 import React from 'react';
+import NavItem from './NavItem.js'
 
-const Nav = (props) => {
+const Nav = () => {
     return (
         <div className="nav-content">
-            <div className="nav-choice">Book Now</div>
-            <div className="nav-choice">Book Now</div>
-            <div className="nav-choice">Book Now</div>
+            <NavItem text="Services" />
+            <NavItem text="Book Now" />
+            <NavItem text="Location" />
+            <NavItem text="Contact" />
         </div>
     );
 };

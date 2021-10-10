@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import './App.css';
-import Home from './components/Home.js'
+import { Switch, Route, Redirect } from 'react-router-dom';
+import Home from './pages/Home.js'
+import BookNow from './pages/BookNow';
 
 function App() {
 
@@ -8,7 +9,17 @@ function App() {
 
     return (
         <div className="App">
-            <Home />
+            <Switch>
+                <Route path="/" exact>
+                    <Redirect to="/home" />
+                </Route>
+                <Route path="/home">
+                    <Home />
+                </Route>
+                <Route path="/book">
+                    <BookNow />
+                </Route>
+            </Switch>
         </div>
     );
 }

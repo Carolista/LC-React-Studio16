@@ -7,6 +7,11 @@
     color: #c36d4b;
 }
 
+.text-link {
+    color: inherit;
+    text-decoration: inherit;
+}
+
 .App {
     height: 100vh;
 }
@@ -145,3 +150,4 @@
         margin-bottom: 2rem;
     }
 }
+

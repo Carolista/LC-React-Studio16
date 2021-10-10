@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from './Header.js'
-import Nav from './Nav.js';
+import Header from '../components/Header.js'
+import Nav from '../components/Nav.js';
 import '../App.css';
 
 const Home = (props) => {

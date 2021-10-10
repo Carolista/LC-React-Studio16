@@ -4,10 +4,10 @@ import NavItem from './NavItem.js'
 const Nav = () => {
     return (
         <div className="nav-content">
-            <NavItem text="Services" />
-            <NavItem text="Book Now" />
-            <NavItem text="Location" />
-            <NavItem text="Contact" />
+            <NavItem text="Spa"/>
+            <NavItem text="Studio"/>
+            <NavItem text="Book Now" link="book" />
+            <NavItem text="Contact"/>
         </div>
     );
 };

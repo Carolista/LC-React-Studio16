@@ -1,11 +1,10 @@
-import { useState } from 'react';
+import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import Home from './pages/Home.js'
+import Home from './pages/Home'
+import Header from './components/Header';
 import BookNow from './pages/BookNow';
 
 function App() {
-
-    // const [currPage, setCurrPage] = useState("book");
 
     return (
         <div className="App">
@@ -17,6 +16,7 @@ function App() {
                     <Home />
                 </Route>
                 <Route path="/book">
+                    <Header />
                     <BookNow />
                 </Route>
             </Switch>

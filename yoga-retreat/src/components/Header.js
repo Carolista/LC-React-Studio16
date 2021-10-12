@@ -1,15 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Masthead from './Masthead';
 
-const Header = (props) => {
+const Header = () => {
     return (
-        <div className="masthead">
-            <div className="masthead-content">
-                <Link to="/home">
-                    <img className="logo-home" src="assets/images/laguna-beach-logo.png" alt="Laguna Beach logo" width="250px" />
-                </Link>
-            </div>
-        </div>
+        <Masthead width="220px" />
     );
 };
 

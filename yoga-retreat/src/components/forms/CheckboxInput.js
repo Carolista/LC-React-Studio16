@@ -6,7 +6,6 @@ const CheckboxInput = (props) => {
     const [isChecked, setIsChecked] = useState(props.initialCheck || false);
 
     const handleValueChange = (e) => {
-        console.log(`Checkbox '${e.target.id}' is ${e.target.checked ? "checked" : "unchecked"}`);
         setIsChecked(e.target.checked);
         props.handleChange(e);
     };

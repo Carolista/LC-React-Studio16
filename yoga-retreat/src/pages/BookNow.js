@@ -83,18 +83,16 @@ const BookNow = () => {
         setEmailInput(e.target.value);
     };
     const handlePhoneChange = (e) => {
-        // TODO: Bonus mission D - automatically add dashes as the user types in their 10 digits!
+        // TODO: Bonus mission A - Add logic to automatically add dashes as the user types in their 10 digits!
         setPhoneInput(e.target.value);
     };
     const handleContactTypeChange = (e) => {
-        console.log("contact type changed to " + e.target.value);
         setSelectedContactType(e.target.value);
     };
     const handleAvailabilitySelectionsChange = (selections) => {
         setAvailabilitySelections(selections);
     };
     const handleAccommodationChange = (e) => {
-        console.log("accommodation changed to " + e.target.value);
         setSelectedAccommodation(e.target.value);
     };
     const handleNumNightsChange = (e) => {
@@ -119,9 +117,9 @@ const BookNow = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         alert("Thank you! Your submission has been sent. You will hear back from our staff within 24 hours.");
-        // TODO: Bonus mission A - Clear form once submission has successfully gone through.
-        // TODO: Bonus mission B - Throw up alert and do not clear form if any required fields are invalid.
-        // TODO: Bonus mission C - Add a modal instead of an alert that lists a summary of all their information and selections.
+        // TODO: Throw up an alert and do not clear form if any required fields are invalid or missing.
+        // TODO: Clear form once submission has successfully gone through.
+        // TODO: Bonus mission B - Add a modal instead of an alert that lists a summary of all their information and selections. (Hint: adapt the modal and backdrop components from my Studio 10 exercise!)
     };
 
     return (
@@ -159,7 +157,6 @@ const BookNow = () => {
                                 <SelectInput id="preferredContact" label="Preferred Contact Type" options={preferredContactOptions} handleChange={handleContactTypeChange} required={true} />
                             </div>
                             <div className="col-9">
-                                {/* TODO: Show only if "phone" is selected */}
                                 {selectedContactType === "phone" && <CheckboxGroup id="contactAvailability" options={contactAvailability} prepend="When can we call?" handleChange={handleAvailabilitySelectionsChange} />}
                             </div>
                         </div>
@@ -172,7 +169,6 @@ const BookNow = () => {
                                 <RadioButtons id="accommodationType" options={accommodationTypes} prepend="How long would you like to stay?" handleChange={handleAccommodationChange} required={true} />
                             </div>
                             <div className="col-4">
-                                {/* TODO: Show only if "overnight" is selected */}
                                 {selectedAccommodation === "overnight" && <NumberInput id="phone" label="Nights" width="100px" placeholder="1" required={selectedAccommodation === "overnight"} handleChange={handleNumNightsChange} />}
                             </div>
                         </div>
@@ -186,8 +182,7 @@ const BookNow = () => {
                                 <CheckboxGroup id="yogaTypes" options={yogaTypes} handleChange={handleYogaSelectionsChange} />
                             </div>
                             <div className="col-4">
-                            {/* TODO: Make this required only if one of the yoga options has been checked */}
-                                <SelectInput id="yogaLevel" label="Yoga Level" options={yogaLevels} handleChange={handleYogaLevelChange} />
+                                <SelectInput id="yogaLevel" label="Yoga Level" options={yogaLevels} required={yogaSelections.includes("traditional")} handleChange={handleYogaLevelChange} />
                             </div>
                         </div>
                         <h4 className="subsection mt-3">Spa</h4>

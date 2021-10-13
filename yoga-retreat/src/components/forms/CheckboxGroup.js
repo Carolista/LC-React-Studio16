@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import CheckboxInput from './CheckboxInput';
 
@@ -7,7 +7,6 @@ const CheckboxGroup = (props) => {
     const [selections, setSelections] = useState([]);
 
     const handleSelectionChange = (e) => {
-        console.log(e.target.id + " was clicked");
         let currSelections = selections;
         if (e.target.checked && !selections.includes(e.target.id)) {
             currSelections.push(e.target.id);
@@ -16,7 +15,6 @@ const CheckboxGroup = (props) => {
             currSelections.splice(currSelections.indexOf(e.target.id), 1);
             setSelections(currSelections);
         }
-        console.log(currSelections);
         props.handleChange(currSelections);
     };
 

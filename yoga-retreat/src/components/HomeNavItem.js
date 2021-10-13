@@ -18,7 +18,7 @@ const HomeNavItem = (props) => {
         <>
             {/* If a route is passed in, wrap Content with Link */}
             {props.link && <Link to={`/${props.link}`} className="text-link"><Content /></Link>}
-            {/* If no route is passed in (since this is a fake site) */}
+            {/* If no route is passed in (since this is a fake site and has only one other page) */}
             {!props.link && <Content />}
         </>
     );

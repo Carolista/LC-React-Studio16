@@ -1,13 +1,6 @@
-/* 
-    TODO: 
-    Remove media query break for home page
-    Seperate the header from masthead
-    Use masthead by itself on home page
-    Put masthead in header
-    Use header only on other pages
-*/
 
 /* Custom classes, etc */
+
 .primary-lighter {
     background-color: #c36d4b;
 } 

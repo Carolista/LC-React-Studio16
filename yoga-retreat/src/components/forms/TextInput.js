@@ -10,6 +10,10 @@ const TextInput = (props) => {
         setWasTouched(true);
         if (props.required && e.target.value.trim() === "") {
             setIsInvalid(true);
+        } else if (props.type == "email" && !e.target.value.trim().match(/^\S+@\S+\.\S+$/)) {
+            setIsInvalid(true);
+        } else if (props.type == "tel" && !e.target.value.trim().match(/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/)) {
+            setIsInvalid(true);
         } else {
             setIsInvalid(false);
         }
@@ -18,7 +22,7 @@ const TextInput = (props) => {
 
     return (
         <div className="form-group">
-            <input className={`form-control form-control-sm mt-3 ${isInvalid && "is-invalid"}`} id={props.id} type="text" placeholder={props.placeholder} style={props.width && { width: `${props.width}`}} onChange={handleValueChange} />
+            <input className={`form-control form-control-sm mt-3 ${isInvalid && "is-invalid"}`} id={props.id} type={props.type} placeholder={props.placeholder} style={props.width && { width: `${props.width}`}} onChange={handleValueChange} />
             <label className="small" id={`${props.id}-label`} htmlFor={props.id}>{props.label}{props.required && <sup className="text-danger">*</sup>}</label>
         </div>
     );
@@ -30,6 +34,7 @@ TextInput.propTypes = {
     placeholder: PropTypes.string,
     width: PropTypes.string, // eg: "200px" or "10rem"
     required: PropTypes.bool,
+    type: PropTypes.string.isRequired,
     handleChange: PropTypes.func.isRequired,
 };
 

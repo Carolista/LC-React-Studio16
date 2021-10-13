@@ -118,25 +118,23 @@
     transition: background-color 0.3s ease-in-out, width 0.3s ease-in-out, border-right 0.3s ease-in-out;
 }
 
-
-.section-bkg {
+.form-content {
     width: 800px;
     margin: 40px auto;
     padding: 0px 0px 40px;
 }
-
-/* .section-bkg:before {
-    background-color: rgba(255, 255, 255, 0.7);
-} */
-
-/* input {
-    background-color: white;
-    opacity: 1;
-} */
 
 .space-right {
     margin-right: 18px;
 }
 .space-left {
     margin-left: 18px;
+}
+
+.form-section {
+    color: #a7451f
+}
+
+.subsection {
+    color: #444;
 }

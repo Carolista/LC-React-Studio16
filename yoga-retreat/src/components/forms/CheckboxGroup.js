@@ -20,11 +20,6 @@ const CheckboxGroup = (props) => {
         props.handleChange(currSelections);
     };
 
-    useEffect(() => {
-        console.log(selections);
-        props.handleChange(selections);
-    }, [selections]);
-
     const Checkboxes = () => props.options.map((obj) => {
         return (
             <CheckboxInput key={obj.value} id={obj.value} label={obj.option} handleChange={handleSelectionChange} />
@@ -33,7 +28,7 @@ const CheckboxGroup = (props) => {
 
     return (
         <div className="form-group mt-3" id={props.id} value={selections}>
-            {props.prepend && <span className="space-right">{props.prepend}</span>}
+            {props.prepend && <span className="fw-bold space-right">{props.prepend}</span>}
             <Checkboxes />           
         </div>
     );

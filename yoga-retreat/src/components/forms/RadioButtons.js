@@ -21,7 +21,7 @@ const RadioButtons = (props) => {
 
     return (
         <div className="form-group mt-3" id={props.id} value={selected}>
-            {props.prepend && <span className="space-right">{props.prepend}{props.required && <sup className="text-danger">*</sup>}</span>}
+            {props.prepend && <span className="fw-bold space-right">{props.prepend}{props.required && <sup className="text-danger">*</sup>}</span>}
             <Radios />      
         </div>
     );

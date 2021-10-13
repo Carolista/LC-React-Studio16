@@ -61,6 +61,7 @@ const BookNow = () => {
     const [emailInput, setEmailInput] = useState("");
     const [phoneInput, setPhoneInput] = useState("");
     const [selectedContactType, setSelectedContactType] = useState("");
+    const [availabilitySelections, setAvailabilitySelections] = useState([]);
     const [selectedAccommodation, setSelectedAccommodation] = useState("");
     const [numNightsInput, setNumNightsInput] = useState(0);
     const [yogaSelections, setYogaSelections] = useState([]);
@@ -82,18 +83,22 @@ const BookNow = () => {
         setEmailInput(e.target.value);
     };
     const handlePhoneChange = (e) => {
+        // TODO: Bonus mission D - automatically add dashes as the user types in their 10 digits!
         setPhoneInput(e.target.value);
     };
     const handleContactTypeChange = (e) => {
         console.log("contact type changed to " + e.target.value);
         setSelectedContactType(e.target.value);
     };
+    const handleAvailabilitySelectionsChange = (selections) => {
+        setAvailabilitySelections(selections);
+    };
     const handleAccommodationChange = (e) => {
         console.log("accommodation changed to " + e.target.value);
         setSelectedAccommodation(e.target.value);
     };
     const handleNumNightsChange = (e) => {
-        setNumNightsInput(e.target.value);
+        setNumNightsInput(Number(e.target.value));
     };
     const handleYogaSelectionsChange = (selections) => {
         setYogaSelections(selections);
@@ -119,22 +124,18 @@ const BookNow = () => {
         // TODO: Bonus mission C - Add a modal instead of an alert that lists a summary of all their information and selections.
     };
 
-    // TODO: perhaps use local storage for form to demonstrate what happens if you accidentally navigate away from app
-
     return (
         <div>
-            {/* <video className="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop"><source src="assets/mp4/yoga-montage-2.mp4" type="video/mp4" /></video> */}
-            <div className="section-bkg">
-                <form>
-
+            <div className="form-content">
+                <form>   
                     <div id="personalInfo" className="mb-4">
-                        <h2>Part 1: Personal Information</h2>
+                        <h2 className="form-section">Part 1: Personal Information</h2>
                         <div className="row">
                             <div className="col">
-                                <TextInput id="firstName" label="First Name" required={true} handleChange={handleFirstNameChange} />
+                                <TextInput type="text" id="firstName" label="First Name" required={true} handleChange={handleFirstNameChange} />
                             </div>
                             <div className="col">
-                                <TextInput id="lastName" label="Last Name" required={true} handleChange={handleLastNameChange} />
+                                <TextInput type="text" id="lastName" label="Last Name" required={true} handleChange={handleLastNameChange} />
                             </div>
                         </div>
                         <div className="row mt-2">
@@ -147,10 +148,10 @@ const BookNow = () => {
                         </div>
                         <div className="row">
                             <div className="col">
-                                <TextInput id="email" label="Email" required={true} handleChange={handleEmailChange} />
+                                <TextInput type="email" id="email" label="Email" required={true} handleChange={handleEmailChange} />
                             </div>
                             <div className="col">
-                                <TextInput id="phone" label="Phone number" required={true} handleChange={handlePhoneChange} />
+                                <TextInput type="tel" id="phone" label="Phone number (XXX-XXX-XXXX)" required={true} handleChange={handlePhoneChange} />
                             </div>
                         </div>
                         <div className="row mt-2">
@@ -159,13 +160,13 @@ const BookNow = () => {
                             </div>
                             <div className="col-9">
                                 {/* TODO: Show only if "phone" is selected */}
-                                {selectedContactType === "phone" && <CheckboxGroup id="contactAvailability" options={contactAvailability} prepend="When can we call?" />}
+                                {selectedContactType === "phone" && <CheckboxGroup id="contactAvailability" options={contactAvailability} prepend="When can we call?" handleChange={handleAvailabilitySelectionsChange} />}
                             </div>
                         </div>
                     </div>
 
                     <div id="accommodations" className="mb-4">
-                        <h2>Part 2: Accommodations</h2>
+                        <h2 className="form-section mt-5">Part 2: Accommodations</h2>
                         <div className="row">
                             <div className="col-8">
                                 <RadioButtons id="accommodationType" options={accommodationTypes} prepend="How long would you like to stay?" handleChange={handleAccommodationChange} required={true} />
@@ -178,18 +179,18 @@ const BookNow = () => {
                     </div>
 
                     <div id="services" className="mb-4">
-                        <h2>Part 3: Services</h2>
-                        <h4>Yoga & Meditation</h4>
+                        <h2 className="form-section mt-5">Part 3: Services</h2>
+                        <h4 className="subsection mt-3">Yoga & Meditation</h4>
                         <div className="row">
                             <div className="col-8">
                                 <CheckboxGroup id="yogaTypes" options={yogaTypes} handleChange={handleYogaSelectionsChange} />
                             </div>
                             <div className="col-4">
                             {/* TODO: Make this required only if one of the yoga options has been checked */}
-                                <SelectInput id="yogaLevel" label="Yoga Level" options={yogaLevels} handleChange={() => {}} />
+                                <SelectInput id="yogaLevel" label="Yoga Level" options={yogaLevels} handleChange={handleYogaLevelChange} />
                             </div>
                         </div>
-                        <h4>Spa</h4>
+                        <h4 className="subsection mt-3">Spa</h4>
                         <div className="row">
                             <div className="col">
                                 <CheckboxGroup id="massageTypes" options={massageTypes} handleChange={handleMassageSelectionsChange} prepend="Massage:" />

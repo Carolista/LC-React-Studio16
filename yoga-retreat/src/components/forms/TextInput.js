@@ -14,6 +14,7 @@ const TextInput = (props) => {
         // It should be set back to false otherwise
         // BE RESOURCEFUL and find a way to match regex patterns if you haven't yet learned how!
         
+        // TODO: Bonus Mission A - For "tel" type, add logic to automatically add dashes as the user types in their 10 digits! You'll need to create a new state variable to save the altered input and bind it to the value attribute of the input.
         props.handleChange(e);
     };
 

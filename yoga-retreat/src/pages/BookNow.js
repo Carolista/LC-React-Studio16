@@ -83,7 +83,6 @@ const BookNow = () => {
         setEmailInput(e.target.value);
     };
     const handlePhoneChange = (e) => {
-        // TODO: Bonus mission A - Add logic to automatically add dashes as the user types in their 10 digits!
         setPhoneInput(e.target.value);
     };
     const handleContactTypeChange = (e) => {
@@ -117,9 +116,11 @@ const BookNow = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         alert("Thank you! Your submission has been sent. You will hear back from our staff within 24 hours.");
-        // TODO: Throw up an alert and do not clear form if any required fields are invalid or missing.
         // TODO: Clear form once submission has successfully gone through.
-        // TODO: Bonus mission B - Add a modal instead of an alert that lists a summary of all their information and selections. (Hint: adapt the modal and backdrop components from my Studio 10 exercise!)
+
+        // TODO: Throw up an alert and do not clear form if any required fields are invalid or missing.
+
+        // TODO: Bonus Mission B - Add a modal instead of an alert that lists a summary of all their information and selections. (Hint: adapt the modal and backdrop components from my Studio 10 exercise!)
     };
 
     return (

@@ -5,17 +5,14 @@ const NumberInput = (props) => {
 
     const [currValue, setCurrValue] = useState(Number(props.placeholder));
     // TODO: Create a state variable, isInvalid, and initialize to false
-    const [isInvalid, setIsInvalid] = useState(false);
+    
 
     const handleValueChange = (e) => {
         // TODO: Add logic for validation - isInvalid should be set to true if props.required is true AND:
         //      - the trimmed input value is an empty string
         //      - the input value is equal to the string "0"
-        if (props.required && (e.target.value === "" || e.target.value === "0")) {
-            setIsInvalid(true);
-        } else {
-            setIsInvalid(false);
-        }
+        // It should be set back to false otherwise
+        
         setCurrValue(Number(e.target.value));
         props.handleChange(e);
     };
@@ -24,7 +21,7 @@ const NumberInput = (props) => {
     return (
         <div className="form-group">
             <input className={`form-control form-control-sm mt-3 ${isInvalid && "is-invalid"}`} id={props.id} type="number" placeholder={props.placeholder} value={currValue} min={props.min || 0} style={props.width && { width: `${props.width}`}} onChange={handleValueChange} />
-            <label className="small" id={`${props.id}-label`} htmlFor={props.id}>{props.label}{props.required && <sup className="text-danger">*</sup>}</label>
+            <label className="small" id={`${props.id}-label`} htmlFor={props.id}>{props.label}</label>
         </div>
     );
 };

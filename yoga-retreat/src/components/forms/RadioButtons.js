@@ -22,7 +22,7 @@ const RadioButtons = (props) => {
     // TODO: Just after the props.label text inside the <label> tags, conditionally add an asterisk wrapped in the <sup> tags and give it the class "text-danger" based on whether props.required is true
     return (
         <div className="form-group mt-3" id={props.id} value={selected}>
-            {props.prepend && <span className="fw-bold space-right">{props.prepend}{props.required && <sup className="text-danger">*</sup>}</span>}
+            {props.prepend && <span className="fw-bold space-right">{props.prepend}</span>}
             <Radios />      
         </div>
     );

@@ -4,16 +4,13 @@ import PropTypes from 'prop-types';
 const SelectInput = (props) => {
 
     // TODO: Create a state variable, isInvalid, and initialize to false
-    const [isInvalid, setIsInvalid] = useState(false);
+    
 
     const handleValueChange = (e) => {
         // TODO: Add logic for validation - isInvalid should be set to true if props.required is true AND:
         //      - the selected value is an empty string (i.e. nothing has been selected)
-        if (props.required && e.target.value === "") {
-            setIsInvalid(true);
-        } else {
-            setIsInvalid(false);
-        }
+        // It should be set back to false otherwise
+        
         props.handleChange(e);
     };
 
@@ -24,7 +21,7 @@ const SelectInput = (props) => {
                 <option value=""></option>
                 {props.options.map((obj) => <option key={obj.value} value={obj.value}>{obj.option}</option>)}
             </select>
-            <label className="small" id={`${props.id}-label`} htmlFor={props.id}>{props.label}{props.required && <sup className="text-danger">*</sup>}</label>
+            <label className="small" id={`${props.id}-label`} htmlFor={props.id}>{props.label}</label>
         </div>
     );
 };

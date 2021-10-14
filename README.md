@@ -17,6 +17,8 @@ You're going to enhance a yoga retreat center's booking form. The form elements 
  - [ ] Still in your terminal, use `cd LC-React-Studio16/yoga-retreat` to navigate to the actual React project and then use the command `npm install` to download any required dependencies. *Note: You won't be able to install the correct files or start the program unless you are in the `yoga-retreat` directory.*
  - [ ] Now use the command `npm start` to serve the project to your browser. Test it out! The home page is entirely unnecessary and JUST FOR FUN. You'll be spending all your time on the booking form page.
 
+<p align="center"><img width="1200" alt="Home Page" src="https://user-images.githubusercontent.com/55961845/137238658-093c5df3-63af-42d5-98ed-0002aae906ea.png"></p>
+
  - [ ] In VSCode (or the IDE of your choice), open the project so you can view the code. You should already be in the `main` branch, which is where the starter code resides. Now you're ready to go!
 
 ---
@@ -41,7 +43,9 @@ You're going to enhance a yoga retreat center's booking form. The form elements 
 ### A. Start on the page in the browser.
  - [ ] There are three sections - clearly marked with large headers.
  - [ ] Each section has a variety of input types - and some are even hidden until they become relevant!
- - [ ] The submit button at the bottom is for the entire form, but the validation you will providing will help the user see errors beforehand.
+ - [ ] The submit button at the bottom is for the entire form, but the validation you will provide will help the user see errors beforehand.
+
+<p align="center"><img width="1200" alt="Book Now page before validation" src="https://user-images.githubusercontent.com/55961845/137238815-c44d2d2c-94c2-47a4-9185-1c7b966af8f5.png"></p>
 
 ### B. Test it out!
  - [ ] Fill some fields out, click around on different checkboxes and radio buttons, etc.  
@@ -82,6 +86,8 @@ You're going to enhance a yoga retreat center's booking form. The form elements 
  - [ ] Do a reality check and make sure it displays on the page where expected.
 
 For the purposes of this app, we are assuming that a checkbox being checked is never required, though clearly there are use cases for that. (You know, like when you promise that you read allllllll the Terms and Conditions even when you didn't because you just want to use the app already!) So there is no validation being added to `CheckBoxInput` or `CheckboxGroup`.
+
+<p align="center"><img width="1200" alt="Book Now form after validation" src="https://user-images.githubusercontent.com/55961845/137238885-37fb47be-1013-49fc-baa5-d4ceeb0b9218.png"></p>
  
 ---
 

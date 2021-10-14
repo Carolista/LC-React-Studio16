@@ -17,11 +17,7 @@ You're going to enhance a yoga retreat center's booking form. The form elements 
  - [ ] Still in your terminal, use `cd LC-React-Studio16/yoga-retreat` to navigate to the actual React project and then use the command `npm install` to download any required dependencies. *Note: You won't be able to install the correct files or start the program unless you are in the `yoga-retreat` directory.*
  - [ ] Now use the command `npm start` to serve the project to your browser. Test it out! The home page is entirely unnecessary and JUST FOR FUN. You'll be spending all your time on the booking form page.
 
-<p align="center"><img width="600" alt="Initial view of page with hover over one stylist's photo" src="https://user-images.githubusercontent.com/55961845/132589073-5ded6cf5-8ce3-4539-a060-4d4d667a7cf0.png"></p>
-
  - [ ] In VSCode (or the IDE of your choice), open the project so you can view the code. You should already be in the `main` branch, which is where the starter code resides. Now you're ready to go!
-
-<p align="center"><img width="1240" alt="Starter code" src="https://user-images.githubusercontent.com/55961845/132589644-e09856b3-53aa-451e-a1ab-8a79dbee138a.png"></p>
 
 ---
 

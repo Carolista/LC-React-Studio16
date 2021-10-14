@@ -18,10 +18,11 @@ const TextInput = (props) => {
         props.handleChange(e);
     };
 
+    // TODO: Add the class "is-invalid" conditionally to the input if isInvalid is true
     // TODO: Just after the props.label text inside the <label> tags, conditionally add an asterisk wrapped in the <sup> tags and give it the class "text-danger" based on whether props.required is true
     return (
         <div className="form-group">
-            <input className={`form-control form-control-sm mt-3 ${isInvalid && "is-invalid"}`} id={props.id} type={props.type} placeholder={props.placeholder} style={props.width && { width: `${props.width}`}} onChange={handleValueChange} />
+            <input className={`form-control form-control-sm mt-3 `} id={props.id} type={props.type} placeholder={props.placeholder} style={props.width && { width: `${props.width}`}} onChange={handleValueChange} />
             <label className="small" id={`${props.id}-label`} htmlFor={props.id}>{props.label}</label>
         </div>
     );

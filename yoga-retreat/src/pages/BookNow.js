@@ -116,7 +116,7 @@ const BookNow = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         alert("Thank you! Your submission has been sent. You will hear back from our staff within 24 hours.");
-        // TODO: Clear form once submission has successfully gone through.
+        // TODO: Clear the entire form once submission has successfully gone through. Note: the fields don't clear at the parent level, but at the child level, though you also want to reset your state values here too. How can you communicate to the child component that it should reset, and how will it know when to do it?  
 
         // TODO: Throw up an alert and do not clear form if any required fields are invalid or missing.
 

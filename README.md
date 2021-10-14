@@ -65,7 +65,8 @@ You're going to enhance a yoga retreat center's booking form. The form elements 
  - [ ] Start with the first `TODO` - create a state variable to track if the user's input is invalid.
  - [ ] The next `TODO` has you add some logic to the change handler function.
  - [ ] Skip the `TODO` for Bonus Mission A for now.
- - [ ] The third `TODO` instructs you to conditionally display a red asterisk after the label if the input is required. 
+ - [ ] The third `TODO` tells you to add the `is-invalid` class conditionally to the input.
+ - [ ] The fourth `TODO` instructs you to conditionally display a red asterisk after the label if the input is required. 
  - [ ] Test out your validation on the page in the browser - is it working as expected?
 
 ### B. Then, `NumberInput.js`
@@ -91,6 +92,7 @@ Head over to `BookNow.js` and take a look at the submit click handler.
 ### A. Clear the form.
  - [ ] Don't worry about overall validation yet.
  - [ ] The first `TODO` instructs you to add logic to clear the form once it successfully submits. 
+ - [ ] Keep in mind that while the state variables in the parent hold all the values that need to be submitted, they are not bound to the inputs themselves. That takes place in the child component. How can you communicate from the parent to the child that it needs to be reset? How will the child component know to trigger the reset?
 
 ### B. Make sure the user can't submit unless everything is complete and correct.
  - [ ] Rather than having the submit button disabled, we will just alert the user if they're not quite done yet.
